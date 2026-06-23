@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steam 游戏分类展示样本</title>
+  <link rel="stylesheet" href="steam_sample_showcase.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar">
+      <a class="brand" href="#top">Steam 分类样本</a>
+      <div class="nav-links">
+        <a href="#games">游戏列表</a>
+        <a href="#stats">数据统计</a>
+      </div>
+    </nav>
+    <section class="hero-grid" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">Steam Dataset Preview</p>
+        <h1>10 款游戏的封面、标签、价格、评分和评论</h1>
+        <p>先用小样本验证字段和前端展示效果，确认后可以把同一套结构扩展到 1000 款游戏。</p>
+      </div>
+      <div class="stat-panel" id="stats">
+        <article><span>游戏数</span><strong id="totalCount">0</strong></article>
+        <article><span>免费游戏</span><strong id="freeCount">0</strong></article>
+        <article><span>评论数</span><strong id="reviewCount">0</strong></article>
+        <article><span>标签数</span><strong id="tagCount">0</strong></article>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="toolbar" aria-label="筛选工具">
+      <label class="search-box">
+        <span>搜索</span>
+        <input id="searchInput" type="search" placeholder="游戏名、简介、标签、开发商">
+      </label>
+      <label class="select-box">
+        <span>标签</span>
+        <select id="tagFilter">
+          <option value="all">全部标签</option>
+        </select>
+      </label>
+      <label class="select-box">
+        <span>价格</span>
+        <select id="priceFilter">
+          <option value="all">全部价格</option>
+          <option value="free">免费</option>
+          <option value="paid">付费</option>
+          <option value="discount">折扣中</option>
+        </select>
+      </label>
+      <label class="select-box">
+        <span>评分</span>
+        <select id="ratingFilter">
+          <option value="all">全部评分</option>
+          <option value="90">90% 以上</option>
+          <option value="80">80% 以上</option>
+          <option value="70">70% 以上</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="games-section" id="games">
+      <div class="section-heading">
+        <p class="eyebrow">Games</p>
+        <h2>游戏列表</h2>
+      </div>
+      <div class="game-grid" id="gameGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>没有找到匹配的游戏。</p>
+    </section>
+  </main>
+
+  <script src="steam_sample_data.js"></script>
+  <script src="steam_sample_showcase.js"></script>
+</body>
+</html>
